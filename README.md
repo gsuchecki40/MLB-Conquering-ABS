@@ -6,7 +6,7 @@ XGBoost model analyzing the situational factors that drive MLB manager challenge
 
 ## Overview
 
-Managers don't challenge calls randomly — score, inning, count, and pitch context all shape the decision. This project uses XGBoost to surface which situational features most influence whether a manager will ask for a review, framing the problem as a classification task on a heavily imbalanced dataset (~100:1 non-challenge to challenge ratio).
+Managers don't challenge calls randomly. Score, inning, count, and pitch context all shape the decision. This project uses XGBoost to surface which situational features most influence whether a manager will ask for a review, framing the problem as a classification task on a heavily imbalanced dataset (~100:1 non-challenge to challenge ratio).
 
 The goal is to teach players when the correct context to challenge is.
 
