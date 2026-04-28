@@ -1,0 +1,206 @@
+---
+title: "PitchData"
+output:
+  pdf_document: default
+  html_document: default
+date: "2026-04-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+read.csv("data/pitch_data_2026.csv") -> PitchData
+```
+
+```{r}
+library(ggplot2)
+```
+
+
+# Combine $pitch $game and $event from new_data into a df on game id and play id
+
+```{r}
+new_data$game |>
+  readr::write_csv("data/game_data_2026.csv")
+```
+
+```{r}
+new_data$play |>
+  readr::write_csv("data/play_data_2026.csv")
+```
+
+#Combine on ids 
+
+
+```{r}
+pitch <- new_data$pitch
+play <- new_data$play
+event <- new_data$event
+```
+
+```{r}
+comb <- merge(pitch, play, by.x = c("game_id", "play_id"), by.y = c("game_id", "play_id"))
+
+```
+
+```{r}
+data_baseballsavant <- sabRmetrics::download_baseballsavant(
+  start_date = "2024-07-01",
+  end_date = "2024-07-01"
+)
+```
+
+
+
+```{r}
+str(new_data)
+```
+```{r}
+for (i in 1:nrow(comb)) {
+  game_id <- comb$game_id[i]
+  game_data <- new_data$game[new_data$game$game_id == game_id, ]
+  comb[i, names(game_data)] <- game_data
+}
+
+```
+
+
+```{r}
+res <- data.frame(matrix(ncol = ncol(event), nrow = nrow(comb)))
+
+for(i in 1:nrow(event)){
+  res[which(comb$game_id == event$game_id[i] & comb$event_index.x == event$event_index[i]), ] <- event[i,]
+}
+```
+
+```{r}
+names(res) <- names(event)
+fdat <- cbind.data.frame(comb, res)
+```
+
+```{r}
+# Create new column called score_diff
+fdat$score_diff <- fdat$score_home - fdat$score_away
+
+# Create new column called close game under 3 runs
+fdat$close_game <- abs(fdat$score_diff) < 3
+
+
+```
+
+
+```{r}
+unique(comb$abs_challenged)
+
+# count true abs_challenged fields
+table(comb$abs_challenged)
+
+# ABSOverturns
+table(comb$abs_overturned)
+
+abs_acc <- table(comb$abs_overturned == TRUE) / table(comb$abs_challenged == TRUE)
+
+
+
+```
+# Identify Number of Strikouts where challenges occured
+```{r}
+table(fdat$abs_challenged == TRUE & fdat$event == "Strikeout" & fdat$abs_overturned == TRUE)
+```
+
+
+```{r}
+table(fdat$abs_challenged == TRUE & fdat$event == "Walk" & fdat$abs_overturned == TRUE)
+```
+
+# Challenged Walks Keeping inning alive
+```{r}
+table(fdat$abs_challenged == TRUE & fdat$event == "Walk" & fdat$abs_overturned == TRUE & fdat$post_outs == 2 & fdat$post_strikes == 2)
+```
+# Challenged Strikes Ending Inning
+```{r}
+table(fdat$abs_challenged == TRUE & fdat$event == "Strikeout" & fdat$abs_overturned == TRUE & fdat$post_outs == 3)
+```
+# Denied Strikeouts
+```{r}
+table(fdat$abs_challenged == TRUE & fdat$post_balls <4 & fdat$abs_overturned == TRUE & fdat$post_outs == 2 & fdat$post_strikes == 2)
+```
+
+```{r}
+colnames(fdat)
+```
+
+```{r}
+
+
+
+```
+
+# Logistic Regression
+
+```{r}
+
+model <- glm(abs_challenged ~ pre_balls + pre_strikes + pre_outs + pitch_number.x + inning + score_diff,
+             data = fdat, family = binomial)
+summary(model)
+```
+# XGBoost
+```{r}
+library(xgboost)
+# Prepare data for XGBoost
+fdat$abs_challenged <- as.numeric(fdat$abs_challenged)  # Convert
+features <- c("inning","pre_balls", "pre_strikes", "pre_outs", "pitch_number.x", "score_diff")
+X <- as.matrix(fdat[, features])
+y <- fdat$abs_challenged
+# Train XGBoost model
+dtrain <- xgb.DMatrix(data = X, label = y)
+ratio <- sum(fdat$abs_challenged == FALSE) / sum(fdat$abs_challenged == TRUE)
+params <- list(objective = "binary:logistic", eval_metric = "auc", scale_pos_weight = ratio)
+model <- xgb.train(params = params, data = dtrain, nrounds = 300)
+# Feature importance
+importance <- xgb.importance(feature_names = features, model = model)
+print(importance)
+
+# Eval metrics
+preds <- predict(model, X)
+pred_labels <- ifelse(preds > 0.5, 1, 0)
+conf_matrix <- table(Predicted = pred_labels, Actual = y)
+print(conf_matrix)
+accuracy <- sum(diag(conf_matrix)) / sum(conf_matrix)
+print(paste("Accuracy:", round(accuracy, 4)))
+
+precision <- conf_matrix[2, 2] / sum(conf_matrix[2, ])
+recall <- conf_matrix[2, 2] / sum(conf_matrix[, 2])
+print(paste("Precision:", round(precision, 4)))
+
+library(pROC)
+roc_obj <- roc(y, preds)
+auc_value <- auc(roc_obj)
+print(paste("AUC:", round(auc_value, 4)))
+
+
+```
+```{r}
+library(shapviz)
+
+```
+
+
+```{r}
+X_explain <- X[sample(nrow(X), 2000), ]
+shp <- shapviz(model, X_pred = data.matrix(X_explain), X = X_explain)
+
+
+sv_importance(shp, show_numbers = TRUE,)
+sv_importance(shp, kind = "bee")+ theme_light()
+
+
+```
+```{r}
+sv_waterfall(shp, row_id = 2) +
+  ggtitle("Waterfall plot for second prediction")
+```
+
+

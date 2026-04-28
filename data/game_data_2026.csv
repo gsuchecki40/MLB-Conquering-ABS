@@ -1,0 +1,339 @@
+game_id,game_type,year,date,venue_id,team_id_away,team_name_away,score_away,team_id_home,team_name_home,score_home
+823244,R,2026,2026-03-25,2395,147,New York Yankees,7,137,San Francisco Giants,0
+823649,R,2026,2026-03-26,3289,134,Pittsburgh Pirates,7,121,New York Mets,11
+823812,R,2026,2026-03-26,32,145,Chicago White Sox,2,158,Milwaukee Brewers,14
+824704,R,2026,2026-03-26,17,120,Washington Nationals,10,112,Chicago Cubs,4
+824865,R,2026,2026-03-26,2,142,Minnesota Twins,1,110,Baltimore Orioles,2
+824541,R,2026,2026-03-26,2602,111,Boston Red Sox,3,113,Cincinnati Reds,0
+824218,R,2026,2026-03-26,2392,108,Los Angeles Angels,3,117,Houston Astros,0
+823325,R,2026,2026-03-26,2680,116,Detroit Tigers,8,135,San Diego Padres,2
+823081,R,2026,2026-03-26,2889,139,Tampa Bay Rays,7,138,St. Louis Cardinals,9
+823486,R,2026,2026-03-26,2681,140,Texas Rangers,3,143,Philadelphia Phillies,5
+823974,R,2026,2026-03-26,22,109,Arizona Diamondbacks,2,119,Los Angeles Dodgers,8
+823163,R,2026,2026-03-26,680,114,Cleveland Guardians,6,136,Seattle Mariners,4
+823243,R,2026,2026-03-27,2395,147,New York Yankees,3,137,San Francisco Giants,0
+822839,R,2026,2026-03-27,14,133,Athletics,2,141,Toronto Blue Jays,3
+823893,R,2026,2026-03-27,4169,115,Colorado Rockies,1,146,Miami Marlins,2
+824946,R,2026,2026-03-27,4705,118,Kansas City Royals,0,144,Atlanta Braves,6
+824216,R,2026,2026-03-27,2392,108,Los Angeles Angels,6,117,Houston Astros,2
+823324,R,2026,2026-03-27,2680,116,Detroit Tigers,5,135,San Diego Padres,2
+823162,R,2026,2026-03-27,680,114,Cleveland Guardians,1,136,Seattle Mariners,5
+823971,R,2026,2026-03-27,22,109,Arizona Diamondbacks,4,119,Los Angeles Dodgers,5
+823082,R,2026,2026-03-28,2889,139,Tampa Bay Rays,5,138,St. Louis Cardinals,6
+824701,R,2026,2026-03-28,17,120,Washington Nationals,2,112,Chicago Cubs,10
+822838,R,2026,2026-03-28,14,133,Athletics,7,141,Toronto Blue Jays,8
+824862,R,2026,2026-03-28,2,142,Minnesota Twins,4,110,Baltimore Orioles,1
+823488,R,2026,2026-03-28,2681,140,Texas Rangers,5,143,Philadelphia Phillies,4
+824540,R,2026,2026-03-28,2602,111,Boston Red Sox,5,113,Cincinnati Reds,6
+823651,R,2026,2026-03-28,3289,134,Pittsburgh Pirates,2,121,New York Mets,4
+823892,R,2026,2026-03-28,4169,115,Colorado Rockies,3,146,Miami Marlins,4
+824213,R,2026,2026-03-28,2392,108,Los Angeles Angels,9,117,Houston Astros,11
+823811,R,2026,2026-03-28,32,145,Chicago White Sox,1,158,Milwaukee Brewers,6
+824945,R,2026,2026-03-28,4705,118,Kansas City Royals,2,144,Atlanta Braves,6
+823241,R,2026,2026-03-28,2395,147,New York Yankees,3,137,San Francisco Giants,1
+823323,R,2026,2026-03-28,2680,116,Detroit Tigers,0,135,San Diego Padres,3
+823973,R,2026,2026-03-28,22,109,Arizona Diamondbacks,2,119,Los Angeles Dodgers,3
+823161,R,2026,2026-03-28,680,114,Cleveland Guardians,6,136,Seattle Mariners,5
+824864,R,2026,2026-03-29,2,142,Minnesota Twins,6,110,Baltimore Orioles,8
+823487,R,2026,2026-03-29,2681,140,Texas Rangers,8,143,Philadelphia Phillies,3
+824944,R,2026,2026-03-29,4705,118,Kansas City Royals,4,144,Atlanta Braves,1
+822837,R,2026,2026-03-29,14,133,Athletics,2,141,Toronto Blue Jays,5
+824538,R,2026,2026-03-29,2602,111,Boston Red Sox,2,113,Cincinnati Reds,3
+823647,R,2026,2026-03-29,3289,134,Pittsburgh Pirates,4,121,New York Mets,3
+823891,R,2026,2026-03-29,4169,115,Colorado Rockies,3,146,Miami Marlins,4
+824215,R,2026,2026-03-29,2392,108,Los Angeles Angels,7,117,Houston Astros,9
+823810,R,2026,2026-03-29,32,145,Chicago White Sox,7,158,Milwaukee Brewers,9
+823079,R,2026,2026-03-29,2889,139,Tampa Bay Rays,11,138,St. Louis Cardinals,7
+824700,R,2026,2026-03-29,17,120,Washington Nationals,6,112,Chicago Cubs,3
+823160,R,2026,2026-03-29,680,114,Cleveland Guardians,0,136,Seattle Mariners,8
+824135,R,2026,2026-03-30,7,142,Minnesota Twins,1,118,Kansas City Royals,3
+824863,R,2026,2026-03-30,2,140,Texas Rangers,5,110,Baltimore Orioles,2
+824539,R,2026,2026-03-30,2602,134,Pittsburgh Pirates,0,113,Cincinnati Reds,2
+823484,R,2026,2026-03-30,2681,120,Washington Nationals,13,143,Philadelphia Phillies,2
+823890,R,2026,2026-03-30,4169,145,Chicago White Sox,9,146,Miami Marlins,4
+822834,R,2026,2026-03-30,14,115,Colorado Rockies,14,141,Toronto Blue Jays,5
+824943,R,2026,2026-03-30,4705,133,Athletics,0,144,Atlanta Braves,4
+824702,R,2026,2026-03-30,17,108,Los Angeles Angels,2,112,Chicago Cubs,7
+823809,R,2026,2026-03-30,32,139,Tampa Bay Rays,3,158,Milwaukee Brewers,2
+823080,R,2026,2026-03-30,2889,121,New York Mets,4,138,St. Louis Cardinals,2
+824214,R,2026,2026-03-30,2392,111,Boston Red Sox,1,117,Houston Astros,8
+823320,R,2026,2026-03-30,2680,137,San Francisco Giants,3,135,San Diego Padres,2
+823159,R,2026,2026-03-30,680,147,New York Yankees,1,136,Seattle Mariners,2
+825108,R,2026,2026-03-30,15,116,Detroit Tigers,6,109,Arizona Diamondbacks,9
+823972,R,2026,2026-03-30,22,114,Cleveland Guardians,4,119,Los Angeles Dodgers,2
+824861,R,2026,2026-03-31,2,140,Texas Rangers,8,110,Baltimore Orioles,5
+824537,R,2026,2026-03-31,2602,134,Pittsburgh Pirates,8,113,Cincinnati Reds,3
+823485,R,2026,2026-03-31,2681,120,Washington Nationals,2,143,Philadelphia Phillies,3
+823888,R,2026,2026-03-31,4169,145,Chicago White Sox,2,146,Miami Marlins,9
+822836,R,2026,2026-03-31,14,115,Colorado Rockies,1,141,Toronto Blue Jays,5
+824942,R,2026,2026-03-31,4705,133,Athletics,5,144,Atlanta Braves,2
+824699,R,2026,2026-03-31,17,108,Los Angeles Angels,2,112,Chicago Cubs,0
+823807,R,2026,2026-03-31,32,139,Tampa Bay Rays,2,158,Milwaukee Brewers,6
+823077,R,2026,2026-03-31,2889,121,New York Mets,0,138,St. Louis Cardinals,3
+824212,R,2026,2026-03-31,2392,111,Boston Red Sox,2,117,Houston Astros,9
+825107,R,2026,2026-03-31,15,116,Detroit Tigers,5,109,Arizona Diamondbacks,7
+823322,R,2026,2026-03-31,2680,137,San Francisco Giants,9,135,San Diego Padres,3
+823158,R,2026,2026-03-31,680,147,New York Yankees,5,136,Seattle Mariners,0
+823969,R,2026,2026-03-31,22,114,Cleveland Guardians,1,119,Los Angeles Dodgers,4
+824940,R,2026,2026-04-01,4705,133,Athletics,1,144,Atlanta Braves,5
+824860,R,2026,2026-04-01,2,140,Texas Rangers,3,110,Baltimore Orioles,8
+824536,R,2026,2026-04-01,2602,134,Pittsburgh Pirates,8,113,Cincinnati Reds,3
+823483,R,2026,2026-04-01,2681,120,Washington Nationals,5,143,Philadelphia Phillies,6
+822835,R,2026,2026-04-01,14,115,Colorado Rockies,2,141,Toronto Blue Jays,1
+823889,R,2026,2026-04-01,4169,145,Chicago White Sox,0,146,Miami Marlins,10
+823078,R,2026,2026-04-01,2889,121,New York Mets,1,138,St. Louis Cardinals,2
+823806,R,2026,2026-04-01,32,139,Tampa Bay Rays,2,158,Milwaukee Brewers,8
+824211,R,2026,2026-04-01,2392,111,Boston Red Sox,4,117,Houston Astros,6
+824698,R,2026,2026-04-01,17,108,Los Angeles Angels,2,112,Chicago Cubs,6
+825106,R,2026,2026-04-01,15,116,Detroit Tigers,0,109,Arizona Diamondbacks,1
+823321,R,2026,2026-04-01,2680,137,San Francisco Giants,1,135,San Diego Padres,7
+823157,R,2026,2026-04-01,680,147,New York Yankees,5,136,Seattle Mariners,3
+824136,R,2026,2026-04-01,7,142,Minnesota Twins,9,118,Kansas City Royals,13
+823970,R,2026,2026-04-01,22,114,Cleveland Guardians,4,119,Los Angeles Dodgers,1
+824133,R,2026,2026-04-02,7,142,Minnesota Twins,5,118,Kansas City Royals,1
+825105,R,2026,2026-04-02,15,144,Atlanta Braves,17,109,Arizona Diamondbacks,2
+823242,R,2026,2026-04-02,2395,121,New York Mets,2,137,San Francisco Giants,7
+822758,R,2026,2026-04-03,3309,119,Los Angeles Dodgers,13,120,Washington Nationals,6
+824299,R,2026,2026-04-03,2394,138,St. Louis Cardinals,0,116,Detroit Tigers,4
+823568,R,2026,2026-04-03,3313,146,Miami Marlins,2,147,New York Yankees,8
+824786,R,2026,2026-04-03,3,135,San Diego Padres,2,111,Boston Red Sox,5
+824621,R,2026,2026-04-03,4,141,Toronto Blue Jays,4,145,Chicago White Sox,5
+822919,R,2026,2026-04-03,5325,113,Cincinnati Reds,5,140,Texas Rangers,3
+824458,R,2026,2026-04-03,5,112,Chicago Cubs,1,114,Cleveland Guardians,4
+823732,R,2026,2026-04-03,3312,139,Tampa Bay Rays,4,142,Minnesota Twins,10
+824377,R,2026,2026-04-03,19,143,Philadelphia Phillies,10,115,Colorado Rockies,1
+823406,R,2026,2026-04-03,31,110,Baltimore Orioles,4,134,Pittsburgh Pirates,5
+824056,R,2026,2026-04-03,1,136,Seattle Mariners,3,108,Los Angeles Angels,1
+825026,R,2026,2026-04-03,2529,117,Houston Astros,4,133,Athletics,11
+825103,R,2026,2026-04-03,15,144,Atlanta Braves,2,109,Arizona Diamondbacks,0
+823240,R,2026,2026-04-03,2395,121,New York Mets,10,137,San Francisco Giants,3
+824295,R,2026,2026-04-04,2394,138,St. Louis Cardinals,6,116,Detroit Tigers,11
+824622,R,2026,2026-04-04,4,141,Toronto Blue Jays,3,145,Chicago White Sox,6
+824132,R,2026,2026-04-04,7,158,Milwaukee Brewers,5,118,Kansas City Royals,2
+824134,R,2026,2026-04-04,7,158,Milwaukee Brewers,2,118,Kansas City Royals,8
+822757,R,2026,2026-04-04,3309,119,Los Angeles Dodgers,10,120,Washington Nationals,5
+825027,R,2026,2026-04-04,2529,117,Houston Astros,11,133,Athletics,0
+823404,R,2026,2026-04-04,31,110,Baltimore Orioles,2,134,Pittsburgh Pirates,3
+824782,R,2026,2026-04-04,3,135,San Diego Padres,3,111,Boston Red Sox,2
+822920,R,2026,2026-04-04,5325,113,Cincinnati Reds,2,140,Texas Rangers,0
+823569,R,2026,2026-04-04,3313,146,Miami Marlins,7,147,New York Yankees,9
+823730,R,2026,2026-04-04,3312,139,Tampa Bay Rays,7,142,Minnesota Twins,1
+825104,R,2026,2026-04-04,15,144,Atlanta Braves,1,109,Arizona Diamondbacks,2
+824378,R,2026,2026-04-04,19,143,Philadelphia Phillies,2,115,Colorado Rockies,1
+823239,R,2026,2026-04-04,2395,121,New York Mets,9,137,San Francisco Giants,0
+824054,R,2026,2026-04-04,1,136,Seattle Mariners,0,108,Los Angeles Angels,1
+824459,R,2026,2026-04-05,5,112,Chicago Cubs,1,114,Cleveland Guardians,0
+824460,R,2026,2026-04-05,5,112,Chicago Cubs,5,114,Cleveland Guardians,6
+822756,R,2026,2026-04-05,3309,119,Los Angeles Dodgers,8,120,Washington Nationals,6
+823405,R,2026,2026-04-05,31,110,Baltimore Orioles,2,134,Pittsburgh Pirates,8
+824781,R,2026,2026-04-05,3,135,San Diego Padres,8,111,Boston Red Sox,6
+823566,R,2026,2026-04-05,3313,146,Miami Marlins,7,147,New York Yankees,6
+823729,R,2026,2026-04-05,3312,139,Tampa Bay Rays,4,142,Minnesota Twins,1
+824620,R,2026,2026-04-05,4,141,Toronto Blue Jays,0,145,Chicago White Sox,3
+824131,R,2026,2026-04-05,7,158,Milwaukee Brewers,8,118,Kansas City Royals,5
+822917,R,2026,2026-04-05,5325,113,Cincinnati Reds,2,140,Texas Rangers,1
+824379,R,2026,2026-04-05,19,143,Philadelphia Phillies,1,115,Colorado Rockies,4
+825025,R,2026,2026-04-05,2529,117,Houston Astros,10,133,Athletics,12
+823238,R,2026,2026-04-05,2395,121,New York Mets,5,137,San Francisco Giants,2
+824053,R,2026,2026-04-05,1,136,Seattle Mariners,7,108,Los Angeles Angels,8
+825102,R,2026,2026-04-05,15,144,Atlanta Braves,5,109,Arizona Diamondbacks,6
+824296,R,2026,2026-04-05,2394,138,St. Louis Cardinals,5,116,Detroit Tigers,3
+823002,R,2026,2026-04-06,12,112,Chicago Cubs,4,139,Tampa Bay Rays,6
+824456,R,2026,2026-04-06,5,118,Kansas City Royals,4,114,Cleveland Guardians,2
+823401,R,2026,2026-04-06,31,135,San Diego Padres,5,134,Pittsburgh Pirates,0
+823886,R,2026,2026-04-06,4169,113,Cincinnati Reds,2,146,Miami Marlins,0
+822755,R,2026,2026-04-06,3309,138,St. Louis Cardinals,6,120,Washington Nationals,9
+824783,R,2026,2026-04-06,3,158,Milwaukee Brewers,8,111,Boston Red Sox,6
+822832,R,2026,2026-04-06,14,119,Los Angeles Dodgers,14,141,Toronto Blue Jays,2
+823728,R,2026,2026-04-06,3312,116,Detroit Tigers,3,142,Minnesota Twins,7
+824619,R,2026,2026-04-06,4,110,Baltimore Orioles,2,145,Chicago White Sox,1
+822918,R,2026,2026-04-06,5325,136,Seattle Mariners,1,140,Texas Rangers,2
+824376,R,2026,2026-04-06,19,117,Houston Astros,7,115,Colorado Rockies,9
+824052,R,2026,2026-04-06,1,144,Atlanta Braves,2,108,Los Angeles Angels,6
+823237,R,2026,2026-04-06,2395,143,Philadelphia Phillies,6,137,San Francisco Giants,4
+824457,R,2026,2026-04-07,5,118,Kansas City Royals,1,114,Cleveland Guardians,2
+824618,R,2026,2026-04-07,4,110,Baltimore Orioles,4,145,Chicago White Sox,2
+823648,R,2026,2026-04-07,3289,109,Arizona Diamondbacks,3,121,New York Mets,4
+823402,R,2026,2026-04-07,31,135,San Diego Padres,1,134,Pittsburgh Pirates,7
+822999,R,2026,2026-04-07,12,112,Chicago Cubs,9,139,Tampa Bay Rays,2
+823887,R,2026,2026-04-07,4169,113,Cincinnati Reds,6,146,Miami Marlins,3
+822754,R,2026,2026-04-07,3309,138,St. Louis Cardinals,7,120,Washington Nationals,6
+824780,R,2026,2026-04-07,3,158,Milwaukee Brewers,2,111,Boston Red Sox,3
+823567,R,2026,2026-04-07,3313,133,Athletics,3,147,New York Yankees,5
+822831,R,2026,2026-04-07,14,119,Los Angeles Dodgers,4,141,Toronto Blue Jays,1
+823727,R,2026,2026-04-07,3312,116,Detroit Tigers,2,142,Minnesota Twins,4
+822916,R,2026,2026-04-07,5325,136,Seattle Mariners,2,140,Texas Rangers,3
+824375,R,2026,2026-04-07,19,117,Houston Astros,1,115,Colorado Rockies,5
+824051,R,2026,2026-04-07,1,144,Atlanta Braves,7,108,Los Angeles Angels,2
+823235,R,2026,2026-04-07,2395,143,Philadelphia Phillies,0,137,San Francisco Giants,6
+823403,R,2026,2026-04-08,31,135,San Diego Padres,8,134,Pittsburgh Pirates,2
+824455,R,2026,2026-04-08,5,118,Kansas City Royals,2,114,Cleveland Guardians,10
+824779,R,2026,2026-04-08,3,158,Milwaukee Brewers,0,111,Boston Red Sox,5
+824617,R,2026,2026-04-08,4,110,Baltimore Orioles,5,145,Chicago White Sox,3
+822915,R,2026,2026-04-08,5325,136,Seattle Mariners,0,140,Texas Rangers,3
+822833,R,2026,2026-04-08,14,119,Los Angeles Dodgers,3,141,Toronto Blue Jays,4
+824374,R,2026,2026-04-08,19,117,Houston Astros,1,115,Colorado Rockies,9
+823234,R,2026,2026-04-08,2395,143,Philadelphia Phillies,0,137,San Francisco Giants,5
+822753,R,2026,2026-04-08,3309,138,St. Louis Cardinals,6,120,Washington Nationals,1
+824050,R,2026,2026-04-08,1,144,Atlanta Braves,8,108,Los Angeles Angels,2
+823646,R,2026,2026-04-08,3289,109,Arizona Diamondbacks,7,121,New York Mets,2
+823000,R,2026,2026-04-08,12,112,Chicago Cubs,6,139,Tampa Bay Rays,2
+823885,R,2026,2026-04-08,4169,113,Cincinnati Reds,4,146,Miami Marlins,7
+823564,R,2026,2026-04-08,3313,133,Athletics,3,147,New York Yankees,2
+823726,R,2026,2026-04-08,3312,116,Detroit Tigers,6,142,Minnesota Twins,8
+823884,R,2026,2026-04-09,4169,113,Cincinnati Reds,1,146,Miami Marlins,8
+823565,R,2026,2026-04-09,3313,133,Athletics,1,147,New York Yankees,0
+823724,R,2026,2026-04-09,3312,116,Detroit Tigers,1,142,Minnesota Twins,3
+823645,R,2026,2026-04-09,3289,109,Arizona Diamondbacks,7,121,New York Mets,1
+824130,R,2026,2026-04-09,7,145,Chicago White Sox,2,118,Kansas City Royals,0
+823319,R,2026,2026-04-09,2680,115,Colorado Rockies,3,135,San Diego Padres,7
+824695,R,2026,2026-04-10,17,134,Pittsburgh Pirates,2,112,Chicago Cubs,0
+823482,R,2026,2026-04-10,2681,109,Arizona Diamondbacks,5,143,Philadelphia Phillies,4
+824297,R,2026,2026-04-10,2394,146,Miami Marlins,0,116,Detroit Tigers,2
+824534,R,2026,2026-04-10,2602,108,Los Angeles Angels,10,113,Cincinnati Reds,2
+822829,R,2026,2026-04-10,14,142,Minnesota Twins,4,141,Toronto Blue Jays,10
+823643,R,2026,2026-04-10,3289,133,Athletics,4,121,New York Mets,0
+822997,R,2026,2026-04-10,12,147,New York Yankees,3,139,Tampa Bay Rays,5
+824858,R,2026,2026-04-10,2,137,San Francisco Giants,6,110,Baltimore Orioles,3
+824941,R,2026,2026-04-10,4705,114,Cleveland Guardians,5,144,Atlanta Braves,11
+824128,R,2026,2026-04-10,7,145,Chicago White Sox,0,118,Kansas City Royals,2
+823808,R,2026,2026-04-10,32,120,Washington Nationals,7,158,Milwaukee Brewers,3
+823076,R,2026,2026-04-10,2889,111,Boston Red Sox,2,138,St. Louis Cardinals,3
+823318,R,2026,2026-04-10,2680,115,Colorado Rockies,2,135,San Diego Padres,5
+823156,R,2026,2026-04-10,680,117,Houston Astros,6,136,Seattle Mariners,9
+823968,R,2026,2026-04-10,22,140,Texas Rangers,7,119,Los Angeles Dodgers,8
+823480,R,2026,2026-04-11,2681,109,Arizona Diamondbacks,3,143,Philadelphia Phillies,4
+824294,R,2026,2026-04-11,2394,146,Miami Marlins,1,116,Detroit Tigers,6
+824697,R,2026,2026-04-11,17,134,Pittsburgh Pirates,4,112,Chicago Cubs,3
+822830,R,2026,2026-04-11,14,142,Minnesota Twins,7,141,Toronto Blue Jays,4
+824535,R,2026,2026-04-11,2602,108,Los Angeles Angels,3,113,Cincinnati Reds,7
+823644,R,2026,2026-04-11,3289,133,Athletics,11,121,New York Mets,6
+824129,R,2026,2026-04-11,7,145,Chicago White Sox,0,118,Kansas City Royals,2
+822996,R,2026,2026-04-11,12,147,New York Yankees,4,139,Tampa Bay Rays,5
+823805,R,2026,2026-04-11,32,120,Washington Nationals,3,158,Milwaukee Brewers,1
+824857,R,2026,2026-04-11,2,137,San Francisco Giants,2,110,Baltimore Orioles,6
+823074,R,2026,2026-04-11,2889,111,Boston Red Sox,7,138,St. Louis Cardinals,1
+824939,R,2026,2026-04-11,4705,114,Cleveland Guardians,6,144,Atlanta Braves,0
+823316,R,2026,2026-04-11,2680,115,Colorado Rockies,5,135,San Diego Padres,9
+823967,R,2026,2026-04-11,22,140,Texas Rangers,3,119,Los Angeles Dodgers,6
+823155,R,2026,2026-04-11,680,117,Houston Astros,7,136,Seattle Mariners,8
+824859,R,2026,2026-04-12,2,137,San Francisco Giants,2,110,Baltimore Orioles,6
+823479,R,2026,2026-04-12,2681,109,Arizona Diamondbacks,4,143,Philadelphia Phillies,3
+822828,R,2026,2026-04-12,14,142,Minnesota Twins,8,141,Toronto Blue Jays,2
+824533,R,2026,2026-04-12,2602,108,Los Angeles Angels,9,113,Cincinnati Reds,6
+823642,R,2026,2026-04-12,3289,133,Athletics,1,121,New York Mets,0
+824293,R,2026,2026-04-12,2394,146,Miami Marlins,2,116,Detroit Tigers,8
+822998,R,2026,2026-04-12,12,147,New York Yankees,4,139,Tampa Bay Rays,5
+824126,R,2026,2026-04-12,7,145,Chicago White Sox,6,118,Kansas City Royals,5
+823804,R,2026,2026-04-12,32,120,Washington Nationals,8,158,Milwaukee Brewers,6
+823075,R,2026,2026-04-12,2889,111,Boston Red Sox,9,138,St. Louis Cardinals,3
+824696,R,2026,2026-04-12,17,134,Pittsburgh Pirates,6,112,Chicago Cubs,7
+823317,R,2026,2026-04-12,2680,115,Colorado Rockies,2,135,San Diego Padres,7
+823154,R,2026,2026-04-12,680,117,Houston Astros,1,136,Seattle Mariners,6
+823966,R,2026,2026-04-12,22,140,Texas Rangers,5,119,Los Angeles Dodgers,2
+824938,R,2026,2026-04-12,4705,114,Cleveland Guardians,1,144,Atlanta Braves,13
+823153,R,2026,2026-04-13,680,117,Houston Astros,2,136,Seattle Mariners,6
+824856,R,2026,2026-04-13,2,109,Arizona Diamondbacks,7,110,Baltimore Orioles,9
+823400,R,2026,2026-04-13,31,120,Washington Nationals,5,134,Pittsburgh Pirates,16
+823481,R,2026,2026-04-13,2681,112,Chicago Cubs,7,143,Philadelphia Phillies,13
+823563,R,2026,2026-04-13,3313,108,Los Angeles Angels,10,147,New York Yankees,11
+824937,R,2026,2026-04-13,4705,146,Miami Marlins,10,144,Atlanta Braves,4
+823725,R,2026,2026-04-13,3312,111,Boston Red Sox,6,142,Minnesota Twins,13
+823073,R,2026,2026-04-13,2889,114,Cleveland Guardians,9,138,St. Louis Cardinals,3
+825024,R,2026,2026-04-13,2529,140,Texas Rangers,8,133,Athletics,1
+823964,R,2026,2026-04-13,22,121,New York Mets,0,119,Los Angeles Dodgers,4
+824853,R,2026,2026-04-14,2,109,Arizona Diamondbacks,4,110,Baltimore Orioles,3
+824292,R,2026,2026-04-14,2394,118,Kansas City Royals,1,116,Detroit Tigers,2
+823398,R,2026,2026-04-14,31,120,Washington Nationals,5,134,Pittsburgh Pirates,4
+824531,R,2026,2026-04-14,2602,137,San Francisco Giants,1,113,Cincinnati Reds,2
+823478,R,2026,2026-04-14,2681,112,Chicago Cubs,10,143,Philadelphia Phillies,4
+823562,R,2026,2026-04-14,3313,108,Los Angeles Angels,7,147,New York Yankees,1
+824935,R,2026,2026-04-14,4705,146,Miami Marlins,5,144,Atlanta Braves,6
+823723,R,2026,2026-04-14,3312,111,Boston Red Sox,0,142,Minnesota Twins,6
+824616,R,2026,2026-04-14,4,139,Tampa Bay Rays,8,145,Chicago White Sox,5
+823802,R,2026,2026-04-14,32,141,Toronto Blue Jays,9,158,Milwaukee Brewers,7
+823072,R,2026,2026-04-14,2889,114,Cleveland Guardians,5,138,St. Louis Cardinals,6
+824210,R,2026,2026-04-14,2392,115,Colorado Rockies,6,117,Houston Astros,7
+823315,R,2026,2026-04-14,2680,136,Seattle Mariners,1,135,San Diego Padres,4
+825022,R,2026,2026-04-14,2529,140,Texas Rangers,1,133,Athletics,2
+823965,R,2026,2026-04-14,22,121,New York Mets,1,119,Los Angeles Dodgers,2
+824855,R,2026,2026-04-15,2,109,Arizona Diamondbacks,8,110,Baltimore Orioles,5
+823071,R,2026,2026-04-15,2889,114,Cleveland Guardians,3,138,St. Louis Cardinals,5
+823722,R,2026,2026-04-15,3312,111,Boston Red Sox,9,142,Minnesota Twins,5
+824291,R,2026,2026-04-15,2394,118,Kansas City Royals,1,116,Detroit Tigers,2
+823399,R,2026,2026-04-15,31,120,Washington Nationals,0,134,Pittsburgh Pirates,2
+824532,R,2026,2026-04-15,2602,137,San Francisco Giants,3,113,Cincinnati Reds,8
+823477,R,2026,2026-04-15,2681,112,Chicago Cubs,11,143,Philadelphia Phillies,2
+823561,R,2026,2026-04-15,3313,108,Los Angeles Angels,4,147,New York Yankees,5
+824936,R,2026,2026-04-15,4705,146,Miami Marlins,3,144,Atlanta Braves,6
+824615,R,2026,2026-04-15,4,139,Tampa Bay Rays,8,145,Chicago White Sox,3
+823803,R,2026,2026-04-15,32,141,Toronto Blue Jays,1,158,Milwaukee Brewers,2
+824209,R,2026,2026-04-15,2392,115,Colorado Rockies,1,117,Houston Astros,3
+823314,R,2026,2026-04-15,2680,136,Seattle Mariners,6,135,San Diego Padres,7
+825021,R,2026,2026-04-15,2529,140,Texas Rangers,5,133,Athletics,6
+823963,R,2026,2026-04-15,22,121,New York Mets,2,119,Los Angeles Dodgers,8
+823396,R,2026,2026-04-16,31,120,Washington Nationals,8,134,Pittsburgh Pirates,7
+824530,R,2026,2026-04-16,2602,137,San Francisco Giants,3,113,Cincinnati Reds,0
+824289,R,2026,2026-04-16,2394,118,Kansas City Royals,9,116,Detroit Tigers,10
+823560,R,2026,2026-04-16,3313,108,Los Angeles Angels,11,147,New York Yankees,4
+823801,R,2026,2026-04-16,32,141,Toronto Blue Jays,1,158,Milwaukee Brewers,2
+824614,R,2026,2026-04-16,4,139,Tampa Bay Rays,5,145,Chicago White Sox,3
+825023,R,2026,2026-04-16,2529,140,Texas Rangers,9,133,Athletics,6
+824453,R,2026,2026-04-16,5,110,Baltimore Orioles,2,114,Cleveland Guardians,4
+824208,R,2026,2026-04-16,2392,115,Colorado Rockies,3,117,Houston Astros,2
+823313,R,2026,2026-04-16,2680,136,Seattle Mariners,2,135,San Diego Padres,5
+824693,R,2026,2026-04-17,17,121,New York Mets,4,112,Chicago Cubs,12
+824454,R,2026,2026-04-17,5,110,Baltimore Orioles,6,114,Cleveland Guardians,4
+823476,R,2026,2026-04-17,2681,144,Atlanta Braves,9,143,Philadelphia Phillies,0
+822752,R,2026,2026-04-17,3309,137,San Francisco Giants,10,120,Washington Nationals,5
+823397,R,2026,2026-04-17,31,139,Tampa Bay Rays,1,134,Pittsburgh Pirates,5
+823559,R,2026,2026-04-17,3313,118,Kansas City Royals,2,147,New York Yankees,4
+823883,R,2026,2026-04-17,4169,158,Milwaukee Brewers,7,146,Miami Marlins,5
+824778,R,2026,2026-04-17,3,116,Detroit Tigers,0,111,Boston Red Sox,1
+824207,R,2026,2026-04-17,2392,138,St. Louis Cardinals,9,117,Houston Astros,4
+823720,R,2026,2026-04-17,3312,113,Cincinnati Reds,2,142,Minnesota Twins,1
+824373,R,2026,2026-04-17,19,119,Los Angeles Dodgers,7,115,Colorado Rockies,1
+824048,R,2026,2026-04-17,1,135,San Diego Padres,0,108,Los Angeles Angels,8
+823152,R,2026,2026-04-17,680,140,Texas Rangers,5,136,Seattle Mariners,0
+825101,R,2026,2026-04-17,15,141,Toronto Blue Jays,3,109,Arizona Diamondbacks,6
+825019,R,2026,2026-04-17,2529,145,Chicago White Sox,9,133,Athletics,2
+823558,R,2026,2026-04-18,3313,118,Kansas City Royals,4,147,New York Yankees,13
+823721,R,2026,2026-04-18,3312,113,Cincinnati Reds,5,142,Minnesota Twins,4
+824694,R,2026,2026-04-18,17,121,New York Mets,2,112,Chicago Cubs,4
+823394,R,2026,2026-04-18,31,139,Tampa Bay Rays,8,134,Pittsburgh Pirates,7
+822751,R,2026,2026-04-18,3309,137,San Francisco Giants,7,120,Washington Nationals,6
+825020,R,2026,2026-04-18,2529,145,Chicago White Sox,6,133,Athletics,7
+824775,R,2026,2026-04-18,3,116,Detroit Tigers,4,111,Boston Red Sox,1
+823882,R,2026,2026-04-18,4169,158,Milwaukee Brewers,5,146,Miami Marlins,2
+824451,R,2026,2026-04-18,5,110,Baltimore Orioles,2,114,Cleveland Guardians,4
+824206,R,2026,2026-04-18,2392,138,St. Louis Cardinals,7,117,Houston Astros,5
+823151,R,2026,2026-04-18,680,140,Texas Rangers,3,136,Seattle Mariners,7
+823474,R,2026,2026-04-18,2681,144,Atlanta Braves,3,143,Philadelphia Phillies,1
+824372,R,2026,2026-04-18,19,119,Los Angeles Dodgers,3,115,Colorado Rockies,4
+825098,R,2026,2026-04-18,15,141,Toronto Blue Jays,2,109,Arizona Diamondbacks,6
+824049,R,2026,2026-04-18,1,135,San Diego Padres,4,108,Los Angeles Angels,1
+822750,R,2026,2026-04-19,3309,137,San Francisco Giants,0,120,Washington Nationals,3
+823393,R,2026,2026-04-19,31,139,Tampa Bay Rays,3,134,Pittsburgh Pirates,6
+823556,R,2026,2026-04-19,3313,118,Kansas City Royals,0,147,New York Yankees,7
+824452,R,2026,2026-04-19,5,110,Baltimore Orioles,4,114,Cleveland Guardians,8
+823881,R,2026,2026-04-19,4169,158,Milwaukee Brewers,3,146,Miami Marlins,5
+824205,R,2026,2026-04-19,2392,138,St. Louis Cardinals,7,117,Houston Astros,5
+823718,R,2026,2026-04-19,3312,113,Cincinnati Reds,7,142,Minnesota Twins,4
+824691,R,2026,2026-04-19,17,121,New York Mets,1,112,Chicago Cubs,2
+824371,R,2026,2026-04-19,19,119,Los Angeles Dodgers,6,115,Colorado Rockies,9
+825018,R,2026,2026-04-19,2529,145,Chicago White Sox,7,133,Athletics,4
+824047,R,2026,2026-04-19,1,135,San Diego Padres,2,108,Los Angeles Angels,1
+823150,R,2026,2026-04-19,680,140,Texas Rangers,2,136,Seattle Mariners,5
+825100,R,2026,2026-04-19,15,141,Toronto Blue Jays,10,109,Arizona Diamondbacks,4
+824777,R,2026,2026-04-19,3,116,Detroit Tigers,6,111,Boston Red Sox,2
+823475,R,2026,2026-04-19,2681,144,Atlanta Braves,4,143,Philadelphia Phillies,2
+824776,R,2026,2026-04-20,3,116,Detroit Tigers,6,111,Boston Red Sox,8
+824450,R,2026,2026-04-20,5,117,Houston Astros,9,114,Cleveland Guardians,2
+822994,R,2026,2026-04-20,12,113,Cincinnati Reds,6,139,Tampa Bay Rays,1
+823879,R,2026,2026-04-20,4169,138,St. Louis Cardinals,3,146,Miami Marlins,5
+822749,R,2026,2026-04-20,3309,144,Atlanta Braves,9,120,Washington Nationals,4
+824125,R,2026,2026-04-20,7,110,Baltimore Orioles,7,118,Kansas City Royals,5
+824692,R,2026,2026-04-20,17,143,Philadelphia Phillies,1,112,Chicago Cubs,5
+824370,R,2026,2026-04-20,19,119,Los Angeles Dodgers,12,115,Colorado Rockies,3
+824046,R,2026,2026-04-20,1,141,Toronto Blue Jays,5,108,Los Angeles Angels,2
+823149,R,2026,2026-04-20,680,133,Athletics,6,136,Seattle Mariners,4

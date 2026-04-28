@@ -1,0 +1,18 @@
+---
+title: "Baseball"
+output: html_document
+date: "2026-04-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+devtools::install_github("saberpowers/sabRmetrics")     # You don't need to run this line every time
+```
+
+```{r}
+new_data <- sabRmetrics::download_statsapi(start_date = "2026-02-20", end_date = "2026-04-20")
+```
+

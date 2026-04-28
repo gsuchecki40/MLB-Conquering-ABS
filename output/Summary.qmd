@@ -1,0 +1,405 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from matplotlib import rcParams
+from pathlib import Path
+ 
+plt.style.use("dark_background")
+rcParams.update({
+    "axes.facecolor":   "#111111",
+    "figure.facecolor": "#111111",
+    "axes.edgecolor":   "#333333",
+    "grid.color":       "#222222",
+    "text.color":       "white",
+    "axes.labelcolor":  "white",
+    "xtick.color":      "white",
+    "ytick.color":      "white",
+    "font.family":      "monospace",
+})
+ 
+OUTPUT = Path("output")
+OUTPUT.mkdir(exist_ok=True)
+ 
+COLORS = {
+    "Pitcher": "#FF6B6B",
+    "Catcher": "#00BFFF",
+    "Batter":  "#98FB98",
+    "ST":      "#FFD700",
+    "RS":      "#00BFFF",
+}
+ 
+```
+
+
+```{python}
+roles   = ["Pitcher", "Catcher", "Batter"]
+seasons = ["Spring Training", "Regular Season"]
+x       = np.arange(len(roles))
+w       = 0.35
+s_colors = [COLORS["ST"], COLORS["RS"]]
+ 
+def get_val(df, role, season, col):
+    row = df[(df["role"] == role) & (df["season"] == season)]
+    return row[col].values[0] if len(row) > 0 else 0
+ 
+def bar_labels(ax, bars, fmt="{:.0f}"):
+    for bar in bars:
+        h = bar.get_height()
+        if abs(h) > 0.001:
+            ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                h + (0.01 if h >= 0 else -0.04),
+                fmt.format(h),
+                ha="center", va="bottom" if h >= 0 else "top",
+                fontsize=8, color="white"
+            )
+```
+
+```{python}
+def load(path, role, season):
+    df = pd.read_csv(path, low_memory=False)
+    df["role"]   = role
+    df["season"] = season
+    return df
+ 
+lb = pd.concat([
+    load("data/abs_pitcher_rs.csv", "Pitcher", "Regular Season"),
+    load("data/abs_pitcher_st.csv", "Pitcher", "Spring Training"),
+    load("data/abs_catcher_rs.csv", "Catcher", "Regular Season"),
+    load("data/abs_catcher_st.csv", "Catcher", "Spring Training"),
+    load("data/abs_batter_rs.csv",  "Batter",  "Regular Season"),
+    load("data/abs_batter_st.csv",  "Batter",  "Spring Training"),
+], ignore_index=True)
+ 
+# Summary by role + season
+summary = lb.groupby(["role", "season"]).agg(
+    players        = ("entity_name",   "count"),
+    total_chal     = ("n_challenges",  "sum"),
+    total_overturn = ("n_overturns",   "sum"),
+    total_exp      = ("exp_chal",      "sum"),
+    total_net_for  = ("net_for",       "sum"),
+    total_k_flip   = ("n_strikeouts_flip", "sum"),
+    total_bb_flip  = ("n_walks_flip",  "sum"),
+).reset_index()
+ 
+summary["overturn_rate"] = summary["total_overturn"] / summary["total_chal"]
+summary["chal_vs_exp"]   = summary["total_chal"] - summary["total_exp"]
+ 
+print(summary[[
+    "role","season","total_chal","overturn_rate","chal_vs_exp","total_net_for"
+]].round(3).to_string(index=False))
+```
+
+
+```{python}
+fig, ax = plt.subplots(figsize=(9, 6))
+ 
+for i, (season, color) in enumerate(zip(seasons, s_colors)):
+    vals = [get_val(summary, r, season, "total_chal") for r in roles]
+    bars = ax.bar(x + (i - 0.5) * w, vals, w,
+                  label=season, color=color, alpha=0.85)
+    bar_labels(ax, bars)
+ 
+ax.set_xticks(x)
+ax.set_xticklabels(roles, fontsize=12)
+ax.set_ylabel("Total Challenges", fontsize=11)
+ax.set_title(
+    "Total ABS Challenges by Role\nSpring Training vs. Regular Season 2026",
+    fontsize=13, pad=12
+)
+ax.legend(fontsize=10, framealpha=0.2)
+ax.grid(axis="y", alpha=0.15)
+plt.tight_layout()
+plt.savefig(OUTPUT / "lb_01_total_challenges.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: lb_01_total_challenges.png")
+```
+
+# Overturn Rate by Role
+```{python}
+fig, ax = plt.subplots(figsize=(9, 6))
+ 
+for i, (season, color) in enumerate(zip(seasons, s_colors)):
+    vals = [get_val(summary, r, season, "overturn_rate") for r in roles]
+    bars = ax.bar(x + (i - 0.5) * w, vals, w,
+                  label=season, color=color, alpha=0.85)
+    bar_labels(ax, bars, fmt="{:.1%}")
+ 
+ax.axhline(0.5, color="white", linestyle="--", alpha=0.3, linewidth=1)
+ax.text(2.5, 0.515, "50% baseline", fontsize=8, color="white", alpha=0.4)
+ax.set_xticks(x)
+ax.set_xticklabels(roles, fontsize=12)
+ax.set_ylabel("Overturn Rate", fontsize=11)
+ax.yaxis.set_major_formatter(
+    plt.FuncFormatter(lambda y, _: f"{y:.0%}")
+)
+ax.set_ylim(0, 1.05)
+ax.set_title(
+    "Challenge Overturn Rate by Role\nAre pitchers worse at knowing when to challenge?",
+    fontsize=13, pad=12
+)
+ax.legend(fontsize=10, framealpha=0.2)
+ax.grid(axis="y", alpha=0.15)
+plt.tight_layout()
+plt.savefig(OUTPUT / "lb_02_overturn_rate.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: lb_02_overturn_rate.png")
+```
+
+# Challenge Volume vs. Expected
+```{python}
+ 
+fig, ax = plt.subplots(figsize=(9, 6))
+ 
+for i, (season, color) in enumerate(zip(seasons, s_colors)):
+    vals = [get_val(summary, r, season, "chal_vs_exp") for r in roles]
+    bars = ax.bar(x + (i - 0.5) * w, vals, w,
+                  label=season, color=color, alpha=0.85)
+    bar_labels(ax, bars, fmt="{:+.1f}")
+ 
+ax.axhline(0, color="white", linestyle="--", alpha=0.3, linewidth=1)
+ax.set_xticks(x)
+ax.set_xticklabels(roles, fontsize=12)
+ax.set_ylabel("Actual − Expected Challenges", fontsize=11)
+ax.set_title(
+    "Actual vs. Expected Challenges by Role\n"
+    "Positive = over-challenging | Negative = under-challenging",
+    fontsize=13, pad=12
+)
+ax.legend(fontsize=10, framealpha=0.2)
+ax.grid(axis="y", alpha=0.15)
+plt.tight_layout()
+plt.savefig(OUTPUT / "lb_03_actual_vs_expected.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: lb_03_actual_vs_expected.png")
+ 
+```
+
+# Strikeouts and Walks Flipped
+
+
+```{python}
+fig, axes = plt.subplots(1, 2, figsize=(14, 6), sharey=False)
+ 
+for ax, col, title, ylabel in zip(
+    axes,
+    ["total_k_flip",  "total_bb_flip"],
+    ["Strikeouts Flipped\n(Ball → Strike 3)", "Walks Flipped\n(Strike → Ball 4)"],
+    ["Strikeouts Saved", "Walks Prevented"]
+):
+    for i, (season, color) in enumerate(zip(seasons, s_colors)):
+        vals = [get_val(summary, r, season, col) for r in roles]
+        bars = ax.bar(x + (i - 0.5) * w, vals, w,
+                      label=season, color=color, alpha=0.85)
+        bar_labels(ax, bars)
+ 
+    ax.set_xticks(x)
+    ax.set_xticklabels(roles, fontsize=11)
+    ax.set_ylabel(ylabel, fontsize=10)
+    ax.set_title(title, fontsize=12, pad=8)
+    ax.legend(fontsize=9, framealpha=0.2)
+    ax.grid(axis="y", alpha=0.15)
+ 
+fig.suptitle(
+    "Concrete Outcomes from Challenges by Role — 2026",
+    fontsize=14, y=1.02
+)
+plt.tight_layout()
+plt.savefig(OUTPUT / "lb_05_flipped_outcomes.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: lb_05_flipped_outcomes.png")
+```
+
+# Catcher Run Saved
+```{python}
+catcher_rs = lb[
+    (lb["role"] == "Catcher") &
+    (lb["season"] == "Regular Season") &
+    (lb["n_challenges"] >= 3)
+].copy()
+ 
+fig, ax = plt.subplots(figsize=(10, 7))
+ 
+sc = ax.scatter(
+    catcher_rs["n_challenges"],
+    catcher_rs["rate_overturns"],
+    c=catcher_rs["net_for"],
+    cmap="RdYlGn", vmin=-3, vmax=8,
+    s=80, alpha=0.9, edgecolors="white", linewidths=0.3
+)
+ 
+for _, row in catcher_rs.iterrows():
+    ax.annotate(
+        row["entity_name"].split(",")[0],
+        (row["n_challenges"], row["rate_overturns"]),
+        fontsize=7, alpha=0.75,
+        xytext=(5, 3), textcoords="offset points"
+    )
+ 
+ax.axhline(0.5, color="white", linestyle="--", alpha=0.3, linewidth=1)
+ax.text(catcher_rs["n_challenges"].max() * 0.95, 0.515,
+        "50% baseline", fontsize=8, color="white", alpha=0.4, ha="right")
+ 
+cbar = plt.colorbar(sc, ax=ax)
+cbar.set_label("Net Run Value", fontsize=10)
+ 
+ax.set_xlabel("Number of Challenges", fontsize=11)
+ax.set_ylabel("Overturn Rate", fontsize=11)
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f"{y:.0%}"))
+ax.set_title(
+    "Catcher Challenge Quality — Regular Season 2026\n"
+    "Color = Net Run Value | Min. 3 challenges",
+    fontsize=13, pad=12
+)
+ax.grid(alpha=0.12)
+plt.tight_layout()
+plt.savefig(OUTPUT / "lb_06_catcher_scatter.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: lb_06_catcher_scatter.png")
+```
+
+
+```{python}
+plt.style.use("dark_background")
+Path("output").mkdir(exist_ok=True)
+ 
+df = pd.read_csv("data/pbp.csv", low_memory=False)
+df = df[df["plate_x"].between(-3, 3) & df["plate_z"].between(0, 6)].copy()
+df["is_strike"] = (df["description"] == "called_strike").astype(int)
+ 
+PLATE_HALF = 0.7083
+x_bins     = np.linspace(-2, 2, 17)
+z_bins     = np.linspace(0.5, 5, 19)
+ 
+ 
+def make_grid(data):
+    grid = np.full((len(z_bins)-1, len(x_bins)-1), np.nan)
+    for i in range(len(z_bins)-1):
+        for j in range(len(x_bins)-1):
+            cell = data[
+                data["plate_x"].between(x_bins[j], x_bins[j+1]) &
+                data["plate_z"].between(z_bins[i], z_bins[i+1])
+            ]
+            if len(cell) >= 5:
+                grid[i, j] = cell["is_strike"].mean()
+    return grid
+ 
+ 
+def add_zone(ax):
+    ax.add_patch(patches.Rectangle(
+        (-PLATE_HALF, 1.5), PLATE_HALF * 2, 2.0,
+        linewidth=1.5, edgecolor="white", facecolor="none", linestyle="--"
+    ))
+plt.show()
+```
+
+# Count State Plot
+```{python}
+counts = [(0,0,"0-0"), (0,2,"0-2"), (3,0,"3-0"), (3,2,"3-2")]
+ 
+fig, axes = plt.subplots(1, 4, figsize=(16, 5), sharey=True)
+fig.suptitle("Called Strike Rate by Zone — Key Counts", fontsize=14, y=1.02)
+ 
+for ax, (b, s, label) in zip(axes, counts):
+    sub = df[(df["balls"] == b) & (df["strikes"] == s)]
+    im  = ax.pcolormesh(x_bins, z_bins, make_grid(sub),
+                        cmap="RdYlGn", vmin=0, vmax=1, shading="flat")
+    add_zone(ax)
+    ax.set_title(f"{label}  (n={len(sub):,})", fontsize=11)
+    ax.set_xlabel("Horizontal (ft)", fontsize=9)
+    ax.set_xlim(-2, 2)
+    ax.set_ylim(0.5, 5)
+    ax.set_xticks([-1, 0, 1])
+ 
+axes[0].set_ylabel("Vertical (ft)", fontsize=10)
+axes[0].set_yticks([1.5, 2.5, 3.5, 4.5])
+ 
+fig.text(0.92, 0.75, "100%\nstrike", ha="center", fontsize=8, color="#66BB66")
+fig.text(0.92, 0.50, "50%", ha="center", fontsize=8, color="#BBBB44")
+fig.text(0.92, 0.25, "0%\nball", ha="center", fontsize=8, color="#BB4444")
+ 
+plt.tight_layout()
+plt.savefig("output/zone_counts.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: output/zone_counts.png")
+```
+
+# Score differential plot
+```{python}
+df["score_bucket"] = pd.cut(
+    df["bat_score_diff"],
+    bins=[-np.inf, -3, -1, 1, 3, np.inf],
+    labels=["Down 4+", "Down 1-3", "Tied", "Up 1-3", "Up 4+"]
+)
+ 
+fig, axes = plt.subplots(1, 5, figsize=(20, 5), sharey=True)
+fig.suptitle("Called Strike Rate by Zone — Score Differential (Batting Team)",
+             fontsize=14, y=1.02)
+ 
+for ax, bucket in zip(axes, ["Down 4+", "Down 1-3", "Tied", "Up 1-3", "Up 4+"]):
+    sub = df[df["score_bucket"] == bucket]
+    im  = ax.pcolormesh(x_bins, z_bins, make_grid(sub),
+                        cmap="RdYlGn", vmin=0, vmax=1, shading="flat")
+    add_zone(ax)
+    ax.set_title(f"{bucket}\nn={len(sub):,}", fontsize=11)
+    ax.set_xlabel("Horizontal (ft)", fontsize=9)
+    ax.set_xlim(-2, 2)
+    ax.set_ylim(0.5, 5)
+    ax.set_xticks([-1, 0, 1])
+ 
+axes[0].set_ylabel("Vertical (ft)", fontsize=10)
+axes[0].set_yticks([1.5, 2.5, 3.5, 4.5])
+ 
+fig.text(0.92, 0.75, "100%\nstrike", ha="center", fontsize=8, color="#66BB66")
+fig.text(0.92, 0.50, "50%", ha="center", fontsize=8, color="#BBBB44")
+fig.text(0.92, 0.25, "0%\nball", ha="center", fontsize=8, color="#BB4444")
+ 
+plt.tight_layout()
+plt.savefig("output/zone_score_diff.png", dpi=300,
+            bbox_inches="tight", facecolor="#111111")
+plt.show()
+print("Saved: output/zone_score_diff.png")
+```
+
+# Pitcher Rate
+```{python}
+pitchrs = pd.read_csv("data/abs_pitcher_rs.csv")
+pitchst = pd.read_csv("data/abs_pitcher_st.csv")
+
+pitchrs["season"] = "Regular Season"
+pitchst["season"] = "Spring Training"
+
+pitchers = pd.concat([pitchrs, pitchst], ignore_index=True)
+
+print(pitchers[[
+    "entity_name", "season", "n_challenges", "rate_overturns"
+]].sort_values(["season", "n_challenges"], ascending=[True, False]).to_string(index=False))
+```
+
+
+```{python}
+pitchers['n_challenges'].groupby(pitchers['entity_name']).max().sort_values(ascending=False).head(10)
+```
+
+
+```{python}
+print(catchers[catchers["n_challenges"] > 3][[
+    "entity_name", "season", "n_challenges", "rate_overturns"
+]].sort_values(["season", "rate_overturns"], ascending=[True, False]).to_string(index=False))
+```
+
+# Graph of Top Catchers by Overturn Rate
