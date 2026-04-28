@@ -10,7 +10,7 @@ Since MLB introduced the Automated Ball-Strike challenge system, managers have h
 
 This project uses XGBoost to surface which situational features most influence whether a manager will challenge a call, framing it as a classification task on a heavily imbalanced dataset (~100:1 non-challenge to challenge ratio).
 
-The goal isn't prediction. It's understanding.
+
 
 ---
 
