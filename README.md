@@ -1,4 +1,4 @@
-# When to Tap
+# Conquering ABS
 
 XGBoost model analyzing the situational factors that drive MLB manager challenge decisions.
 
@@ -6,9 +6,11 @@ XGBoost model analyzing the situational factors that drive MLB manager challenge
 
 ## Overview
 
-Managers don't challenge calls randomly. Score, inning, count, and pitch context all shape the decision. This project uses XGBoost to surface which situational features most influence whether a manager will ask for a review, framing the problem as a classification task on a heavily imbalanced dataset (~100:1 non-challenge to challenge ratio).
+Since MLB introduced the Automated Ball-Strike challenge system, managers have had to make real-time decisions: tap your wrist or let the call stand. Score, inning, count, and pitch context all shape that decision — and the data shows it.
 
-The goal is to teach players when the correct context to challenge is.
+This project uses XGBoost to surface which situational features most influence whether a manager will challenge a call, framing it as a classification task on a heavily imbalanced dataset (~100:1 non-challenge to challenge ratio).
+
+The goal isn't prediction. It's understanding.
 
 ---
 
@@ -18,7 +20,7 @@ The goal is to teach players when the correct context to challenge is.
 |--------|-------|
 | AUC | 0.901 |
 
-An AUC of 0.90 means the model correctly ranks a challenged pitch above a non-challenged pitch 90% of the time — solid signal given that manager decisions are inherently noisy human judgments.
+An AUC of 0.90 means the model correctly ranks a challenged pitch above a non-challenged pitch 90% of the time — solid signal given that manager decisions are inherently noisy human judgments made in seconds.
 
 ---
 
@@ -37,22 +39,25 @@ An AUC of 0.90 means the model correctly ranks a challenged pitch above a non-ch
 
 ## Technical Notes
 
-- **Class imbalance** handled via `scale_pos_weight` tuned to the observed class ratio
-- **Eval metric:** `aucpr` (precision-recall AUC) — more informative than standard AUC for imbalanced problems
-- **Threshold tuning** applied post-training to optimize the precision/recall tradeoff
-- Model built and evaluated in R
+- **Class imbalance** handled via `scale_pos_weight` tuned to the observed ~100:1 class ratio
+- **Eval metric:** `aucpr` (precision-recall AUC) — more informative than standard AUC for heavily imbalanced problems
+- **Threshold tuning** applied post-training to find the precision/recall sweet spot
+- Data pulled via Python (Statcast / pybaseball), model built and evaluated in R
 
 ---
 
 ## Repo Structure
 
 ```
-check-the-call/
+MLB-Conquering-ABS/
 ├── data/
-├── R/
-│   ├── model.R
-│   └── features.R
-├── outputs/
+├── output/
+├── DataPull.py               # Statcast data ingestion
+├── PitchPlots.py             # Pitch visualization
+├── Baseball.Rmd              # Main modeling notebook
+├── Sabermetrics.Rmd          # Supporting sabermetric analysis
+├── download_abs_challenge_data.R
+├── Baseball.Rproj
 └── README.md
 ```
 
@@ -60,5 +65,5 @@ check-the-call/
 
 ## Author
 
-Grant Suchecki — MSBA, University of Notre Dame  
-[GitHub](https://github.com/gsuchecki40) · [LinkedIn](https://linkedin.com/in/gsuchecki)
+Grant Suchecki — MSBA Candidate, University of Notre Dame  
+[GitHub](https://github.com/gsuchecki40) · [LinkedIn](https://linkedin.com/in/grantsuchecki)
